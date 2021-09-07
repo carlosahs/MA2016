@@ -21,6 +21,9 @@ for i=1:length(sanitizedT)
     sanitizedX(i) = sumX / count;
 end
 
+% Set initial time value at origin
+sanitizedT = sanitizedT - sanitizedT(1);
+
 stem(sanitizedT, sanitizedX);
 
 % Get polynomial model
