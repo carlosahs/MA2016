@@ -6,7 +6,7 @@ X = Acceleration.X;
 % Sanitize sensor data so only integer second values are kept
 t = floor(t);
 sanitizedT = unique(t);
-sanitizedX = zeros(length(sanitizedT));
+sanitizedX = zeros(size(sanitizedT));
 
 cumCount = 0;
 for i=1:length(sanitizedT)
