@@ -20,3 +20,5 @@ for i=1:length(sanitizedT)
     cumCount = cumCount + count;
     sanitizedX(i) = sumX / count;
 end
+
+stem(sanitizedT, sanitizedX);
