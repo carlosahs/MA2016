@@ -26,9 +26,17 @@ sanitizedT = sanitizedT - sanitizedT(1);
 
 stem(sanitizedT, sanitizedX);
 
+% Moving average filter
+windowSize = 5;
+b = (1 / windowSize) * ones(1,windowSize);
+a = 1;
+filteredX = filter(b,a,sanitizedX);
+figure;
+plot(sanitizedT,filteredX);
+
 % Get polynomial model
-p = polyfit(sanitizedT,sanitizedX,15);
+p = polyfit(sanitizedT,filteredX,17);
 tp = 1:1:length(sanitizedT);
 Xp = polyval(p,tp);
 figure;
-plot(sanitizedT,sanitizedX,tp,Xp);
+plot(sanitizedT,filteredX,tp,Xp);
