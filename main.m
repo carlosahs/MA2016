@@ -22,3 +22,10 @@ for i=1:length(sanitizedT)
 end
 
 stem(sanitizedT, sanitizedX);
+
+% Get polynomial model
+p = polyfit(sanitizedT,sanitizedX,15);
+tp = 1:1:length(sanitizedT);
+Xp = polyval(p,tp);
+figure;
+plot(sanitizedT,sanitizedX,tp,Xp);
