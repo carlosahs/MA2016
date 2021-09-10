@@ -5,7 +5,7 @@ X = Acceleration.X;
 
 % Visualize raw sensor data
 figure;
-stem(t / 60, X);
+stem(t-520, X);
 grid;
 title('Señal de entrada discreta');
 xlabel('Tiempo (s)');
