@@ -46,18 +46,20 @@ b = (1 / windowSize) * ones(1,windowSize);
 a = 1;
 filteredX = filter(b,a,sanitizedX);
 figure;
-plot(sanitizedT,filteredX);
+stem(sanitizedT,filteredX);
 grid;
 title('Señal de entrada discreta filtrada');
 xlabel('Tiempo (s)');
 ylabel('Aceleración eje X');
 
 % Get polynomial model
-p = polyfit(sanitizedT,filteredX,17);
+p = polyfit(sanitizedT,filteredX,20);
 tp = 1:1:length(sanitizedT);
 Xp = polyval(p,tp);
 figure;
-plot(sanitizedT,filteredX,tp,Xp);
+stem(sanitizedT,filteredX)
+hold on;
+plot(tp,Xp);
 grid;
 title('Modelo polinomial de la señal de entrada discreta');
 xlabel('Tiempo (s)');
