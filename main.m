@@ -38,5 +38,10 @@ plot(sanitizedT,filteredX);
 p = polyfit(sanitizedT,filteredX,17);
 tp = 1:1:length(sanitizedT);
 Xp = polyval(p,tp);
-figure;
+% figure;
 plot(sanitizedT,filteredX,tp,Xp);
+
+% Fast fourier transform
+fourierX = fft(sanitizedX);
+figure;
+plot(sanitizedT, fourierX);
