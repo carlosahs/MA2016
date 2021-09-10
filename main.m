@@ -81,7 +81,7 @@ f = Fs*(0:(L/2))/L;
 figure;
 plot(f,P1);
 grid;
-title('Espectro de un sólo lado de X(t)');
+title('Espectro izquierdo de X(t)');
 xlabel('f(Hz)');
 ylabel('|P1(f)|');
 
